@@ -1,32 +1,30 @@
 <?php get_header(); ?>
 
-<?php if ( ! have_posts() ) : ?>
-		<h1>Not Found</h1>
-			<p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post</p>
-<?php endif; ?>
-
-<?php while ( have_posts() ) : the_post(); ?>
-
+<h3><i><b>Enter your Word Here.....<b><i></h3>
+<div id="search-box">
+                <form method="get" id="searchform" action="" > 
+                    <input type="text" value="Search..." onfocus="if(this.value == this.defaultValue) this.value = ''" name="s" id="s" /> 
+                </form>
+            </div>
+<?php while (have_posts()):the_post();?>
+ 
 <div class="post">
-	<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-	<div class="post-details">
-		<div class="post-details-left">
-		Posted on <strong><?php the_date(); ?></strong> by <span class="author"><?php the_author(); ?></span> under <span class="author"><?php the_category(', '); ?></span>
-		</div>
-		<div class="post-details-right">
-		<?php edit_post_link('Edit', '<span class="comment-count">&nbsp;&nbsp;' , '</span>'); ?><span class="comment-count"><?php comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?></span>
-		</div>
-	</div>
-	
-	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
-			<?php the_excerpt(); ?>
-	<?php else : ?>
-			<?php the_content('Read More'); ?>
-	<?php endif; ?>
-	
-	<div class="dots"></div>
-</div><!-- post -->
+
+    
+                        <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                        <p class="meta">Posted by <a href="#"><?php the_author_posts_link(); ?> on </a><?php the_time('F jS,Y'); ?>
+                            &nbsp;&bull;&nbsp; <a href="<?php comments_link(); ?>" class="comments">
+                            <?php comments_number('0 Comments','1 comment','% responses'); ?>
+                            </a> &nbsp;&bull;&nbsp; <a href="<?php the_permalink(); ?>" class="permalink">Full article</a></p>
+                        <div class="entry"> <a href="<?php the_permalink(); ?>" class="image image-full">
+                                <?php the_post_thumbnail('full'); ?>
+                        </a>
+                            <?php the_content('Read More'); ?>
+                        </div>
+                    </div>
 
 <?php endwhile; ?>
+
+<?php comments_template(); ?>
 
 <?php get_footer(); ?>

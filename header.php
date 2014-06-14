@@ -1,27 +1,40 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
-<html lang='en'> 
-	<head> 
-	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/reset.css" type="text/css"> 
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css"> 
-	<!--[if IE]>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie.css" type="text/css" />
-	<![endif]-->
-	</head> 
-	<body class="home blog">
-	<div id="top-bar-tile">
-		<div id="top-bar-content">
-			<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-			<span class="slogan"><?php bloginfo('description'); ?></span>
-			<div id="search-box">
-				<form method="get" id="searchform" action="" > 
-					<input type="text" value="Search..." onfocus="if(this.value == this.defaultValue) this.value = ''" name="s" id="s" /> 
-				</form>
-			</div><!-- search-box -->
-		</div><!-- top-bar-content -->
-	</div><!-- top-bar-tile -->
-	<div id="nav-bar-tile">
-			 <?php wp_nav_menu(array( 'menu' => 'mainnav', 'menu_class' => 'nav-bar-content', 'menu_id' => 'navigation', 'container' => false, 'theme_location' => 'primary-menu', 'show_home' => '1')); ?>
-	</div><!-- nav-bar-tile -->
-	<div id="wrapper">
-		<div id="content">
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title><?php bloginfo('title'); ?></title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'>
+    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" media="screen" />
+    <?php wp_head();?>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header-wrapper">
+        <div id="header">
+            <div id="logo">
+                <h1><a href="#"><b>PERSIAN DISTIONARY</a></h1>
+                <h3>Online Dictionary</h3>
+
+            </div>
+        </div>
+    </div>
+    <!-- end #header -->
+    <div id="menu">
+        <ul>
+            <li class="current_page_item"><a href="http://localhost/wordpress/">Dictionary</a></li>
+            <li><a href="http://dynamo.dictionary.com/">Word Dynamo</a></li>
+            <li><a href="http://www.reference.com/">Reference</a></li>
+            <li><a href="http://translate.reference.com/">Translator</a></li>
+            <li><a href="www.facebook.com">About Us</a></li>
+            
+        </ul>
+    </div>
+    <div id="menu">
+        <?php wp_nav_menu(); ?>
+    </div>
+    <!-- end #menu -->
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="page-bgbtm">
+                <div id="content">
