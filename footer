@@ -1,0 +1,17 @@
+</div>
+				<!-- end #content -->
+				<?php get_sidebar(); ?>
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page --> 
+</div>
+	<div id="footer">
+				
+				<p id="copyright">Copyright Â© 2014 Dictionary.com, LLC. All rights reserved.</p>
+	</div> <!-- #footer-->
+			
+<!-- end #footer -->
+</body>
+</html>
